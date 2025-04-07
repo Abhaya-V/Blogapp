@@ -11,7 +11,7 @@ const Blogs = () => {
     const [data,setData] = useState([])
     const navigate = useNavigate()
     useEffect(()=>{
-      axiosInstance.get("http://localhost:4000/blogs").then((res)=>{
+      axiosInstance.get("https://blogapp-server-six.vercel.app/blogs").then((res)=>{
        setData(res.data)
       }).catch((err) =>{
         console.log(err)
@@ -22,7 +22,7 @@ const Blogs = () => {
     }
     function handleDelete(id) {
       if (window.confirm("Are you sure you want to delete this Blog?")) {
-        axiosInstance .delete(`http://localhost:4000/blogs/delete/${id}`)
+        axiosInstance .delete(`https://blogapp-server-six.vercel.app/blogs/delete/${id}`)
           .then((res) => {
             alert("Blog deleted successfully!");
             // Refresh the list

@@ -27,14 +27,14 @@ const AddBlog = () => {
       },[])
       function capValue(){
         if(location.state!=null){
-            axiosInstance.put("http://localhost:4000/blogs/update/"+location.state.row._id,form).then((res)=>{
+            axiosInstance.put("https://blogapp-server-six.vercel.app/blogs/update/"+location.state.row._id,form).then((res)=>{
               alert("updated successfully")
               navigate("/blogs")
             }).catch((error)=>{
               console.log(error)
             })
         }else{
-          axiosInstance.post("http://localhost:4000/blogs/add",form).then((res) =>{
+          axiosInstance.post("https://blogapp-server-six.vercel.app/blogs/add",form).then((res) =>{
               alert("Blogs added")
               navigate("/blogs")
             }).catch((err) =>{

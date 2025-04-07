@@ -10,7 +10,7 @@ const Login = () => {
     password:""
   })
   function capValue(){
-    axios.post("http://localhost:4000/user/login",form).then((res) =>{
+    axios.post("https://blogapp-server-six.vercel.app/user/login",form).then((res) =>{
       alert(res.data.message)
       if(res.data.token){
         sessionStorage.setItem("token",res.data.token)
