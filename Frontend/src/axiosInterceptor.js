@@ -1,6 +1,6 @@
 import axios from "axios"
 const axiosInstance = axios.create({
-    baseURL:"http://localhost:4000"
+    baseURL:"https://blogapp-server-six.vercel.app/"
 })
 
 axiosInstance.interceptors.request.use(function (config) {
