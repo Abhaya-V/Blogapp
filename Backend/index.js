@@ -14,18 +14,17 @@ app.use(express.json());
 const blogRoutes = require("./routes/blogRoutes");
 const userRoutes = require("./routes/userRoutes");
 
-const path = require("path")
-app.use(express.static(path.join(__dirname,'/dist')))
+
 
 
 
 app.use("/user", userRoutes);
 app.use("/blogs", blogRoutes);
 
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "dist", "index.html"));
-  })
 
+app.get("/", (req, res) => {
+    res.send("API is running");
+  });
 
 
 const PORT = process.env.PORT || 4000
