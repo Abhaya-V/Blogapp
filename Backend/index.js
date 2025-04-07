@@ -10,6 +10,12 @@ require("dotenv").config()
 require("./db/connection")
 app.use(express.json());
 
+app.use(cors({
+    origin:['https://vercel.com/abhaya-s-projects/blogapp-client/GpzRXFbJUm8EzyfSUMcL8Av9uCHz'],
+    credentials:true,
+    methods:["POST","GET","PUT","DELETE"]
+}))
+
 
 const blogRoutes = require("./routes/blogRoutes");
 const userRoutes = require("./routes/userRoutes");
